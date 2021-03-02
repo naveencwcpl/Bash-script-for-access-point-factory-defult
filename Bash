@@ -1,0 +1,7 @@
+#!/bin/bash
+while read ips
+do
+sshpass -p "Password" ssh -oStrictHostKeyChecking=no -t User@${ips} << EOF
+reset factory
+EOF
+done <iplist
